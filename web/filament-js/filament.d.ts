@@ -450,6 +450,7 @@ export class Engine {
 export class gltfio$AssetLoader {
     public createAssetFromJson(buffer: any): gltfio$FilamentAsset;
     public createAssetFromBinary(buffer: any): gltfio$FilamentAsset;
+    public createInstancedAsset(buffer: any, instances: gltfio$FilamentInstance[]): gltfio$FilamentAsset;
     public delete(): void;
 }
 
@@ -467,6 +468,12 @@ export class gltfio$FilamentAsset {
     public getWireframe(): Entity;
     public getEngine(): Engine;
     public releaseSourceData(): void;
+}
+
+export class gltfio$FilamentInstance {
+    public getEntities(): EntityVector;
+    public getRoot(): Entity;
+    public getAnimator(): gltfio$Animator;
 }
 
 export class gltfio$Animator {
